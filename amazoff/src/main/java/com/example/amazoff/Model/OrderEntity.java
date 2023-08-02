@@ -8,7 +8,9 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -27,4 +29,11 @@ public class OrderEntity {
 
     String cardUsed;
     int OrderTotal;
+
+    @OneToMany(mappedBy="orderEntity",cascade=CascadeType.ALL)
+    List<Item> itemList=new ArrayList<>();
+
+    @ManyToOne
+            @JoinColumn
+    Customer customer;
 }

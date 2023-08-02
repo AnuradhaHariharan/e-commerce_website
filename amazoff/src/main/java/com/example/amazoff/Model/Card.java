@@ -24,6 +24,7 @@ public class Card {
     String cardNo;
     int cvv;
     Date validTill;
+    @Enumerated(EnumType.STRING)
     CardType cardType;
     @ManyToOne
     Customer customer;

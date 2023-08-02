@@ -17,4 +17,16 @@ public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
+
+    @ManyToOne
+    @JoinColumn
+    Cart cart;
+
+    @ManyToOne
+            @JoinColumn
+    OrderEntity orderEntity;
+
+    @ManyToOne
+    @JoinColumn
+    Product product;
 }
