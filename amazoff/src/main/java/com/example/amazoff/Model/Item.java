@@ -1,10 +1,7 @@
 package com.example.amazoff.Model;
 
 import jakarta.persistence.*;
-import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 @Entity
@@ -13,6 +10,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Table(name = "item")
+@Builder
 public class Item {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +20,10 @@ public class Item {
     @JoinColumn
     Cart cart;
 
+    int requiredQuantity;
+
     @ManyToOne
-            @JoinColumn
+    @JoinColumn
     OrderEntity orderEntity;
 
     @ManyToOne

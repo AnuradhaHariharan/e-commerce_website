@@ -23,8 +23,10 @@ public class Product {
     String productName;
     int productPrice;
     int availableQuantity;
+
     @Enumerated(EnumType.STRING)
     ProductCategory productCategory;
+
     @Enumerated(EnumType.STRING)
     ProductStatus productStatus;
 

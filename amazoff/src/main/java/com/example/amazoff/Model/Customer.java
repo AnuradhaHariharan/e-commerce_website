@@ -28,6 +28,7 @@ public class Customer {
     @Enumerated(EnumType.STRING)
     Gender gender;
 
+
     @Column(unique = true,nullable = false)
     String emailId;
 
@@ -36,6 +37,7 @@ public class Customer {
 
     @OneToOne(mappedBy="customer",cascade=CascadeType.ALL)
     Cart cart;
+
     @OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
     List<Card>cards=new ArrayList<>();
 
