@@ -6,6 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,8 +26,15 @@ public class Seller {
     Gender gender;
     @Column(unique = true,nullable = false)
     String emailId;
+
+    String resetOtp;
+    LocalDateTime resetOtpExpiry;
+    @Column(nullable = false)
+    String password;
+
     @Column(unique = true,nullable = false)
     String panId;
+
     @OneToMany(mappedBy="seller",cascade=CascadeType.ALL)
     List<Product>products=new ArrayList<>();
 }

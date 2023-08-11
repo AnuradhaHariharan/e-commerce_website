@@ -21,6 +21,7 @@ public class Card {
     int id;
     @Column(unique = true)
     String cardNo;
+
     int cvv;
     Date validTill;
     @Enumerated(EnumType.STRING)

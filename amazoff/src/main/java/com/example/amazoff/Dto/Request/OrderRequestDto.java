@@ -13,6 +13,7 @@ import lombok.experimental.FieldDefaults;
 public class OrderRequestDto {
 
     String customerEmail;
+    String password;
     int productId;
     String cardUsed;
     int cvv;

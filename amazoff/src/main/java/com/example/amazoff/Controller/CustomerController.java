@@ -22,4 +22,26 @@ public class CustomerController {
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
     }
+    @PutMapping("/forgot_password")
+   public ResponseEntity forgotPassword(@RequestParam("email") String email) {
+        try {
+            // Generate and send OTP to the customer's email
+            customerService.sendPasswordResetOtp(email);
+            return new ResponseEntity(HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+        }
+    }
+    @PutMapping("/reset_password")
+    public ResponseEntity resetPasswordWithOtp(
+            @RequestParam String email,
+            @RequestParam String otp,
+            @RequestParam String newPassword) {
+        try {
+            customerService.resetPasswordWithOtp(email, otp, newPassword);
+            return new ResponseEntity("Password reset successful", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity("An error occurred", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

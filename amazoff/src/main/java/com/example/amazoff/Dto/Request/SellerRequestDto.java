@@ -16,5 +16,6 @@ public class SellerRequestDto {
     int age;
     Gender gender;
     String emailId;
+    String password;
     String panId;
 }

@@ -20,6 +20,7 @@ import java.util.Date;
 public class CardRequestDto {
 
     String customerEmail;
+    String password;
     String cardNo;
     int cvv;
     Date validTill;

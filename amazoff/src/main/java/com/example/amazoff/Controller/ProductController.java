@@ -35,4 +35,13 @@ public class ProductController {
        List<ProductResponseDto> productResponseDtoList=productService.filterproductsByCategoryAndPrice(price,productCategory);
        return new ResponseEntity(productResponseDtoList,HttpStatus.FOUND);
     }
+    @GetMapping("/allproductsofseller")
+    public ResponseEntity getAllProductsOfSeller(@RequestParam("email")String emailId,@RequestParam("password")String password){
+       try{
+        List<ProductResponseDto>productResponseDtoList=productService.getAllProductsOfSeller(emailId,password);
+        return new ResponseEntity(productResponseDtoList,HttpStatus.ACCEPTED);
+    }catch (Exception e){
+           return new ResponseEntity(e.getMessage(),HttpStatus.BAD_REQUEST);
+       }
+    }
 }

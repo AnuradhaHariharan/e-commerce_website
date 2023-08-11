@@ -13,6 +13,7 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ProductRequestDto {
     String emailId;
+    String password;
     String productName;
     int productPrice;
     int availableQuantity;

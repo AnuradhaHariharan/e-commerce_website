@@ -21,6 +21,8 @@ public class CustomerRequestDto {
 
     String emailId;
 
+    String password;
+
     String mobNo;
 
 

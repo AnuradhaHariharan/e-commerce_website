@@ -14,7 +14,7 @@ public class CardTransformer {
                 .build();
     }
 
-    public static CardResponseDto entityToRequestDto(Card card){
+    public static CardResponseDto entityToResponseDto(Card card){
         return CardResponseDto.builder().cardType(card.getCardType())
                 .validTill(card.getValidTill())
                 .build();

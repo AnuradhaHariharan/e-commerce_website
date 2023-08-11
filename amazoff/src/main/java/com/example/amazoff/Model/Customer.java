@@ -6,6 +6,7 @@ import lombok.*;
 import lombok.experimental.FieldDefaults;
 import org.hibernate.annotations.Cascade;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,8 +33,14 @@ public class Customer {
     @Column(unique = true,nullable = false)
     String emailId;
 
+    @Column(nullable = false)
+    String password;
+
     @Column(unique = true,nullable = false)
     String mobNo;
+
+    String resetOtp; // The generated OTP
+    LocalDateTime resetOtpExpiry;
 
     @OneToOne(mappedBy="customer",cascade=CascadeType.ALL)
     Cart cart;

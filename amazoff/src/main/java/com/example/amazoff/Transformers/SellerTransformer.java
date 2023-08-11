@@ -12,7 +12,8 @@ public class SellerTransformer {
                 .panId(sellerRequestDto.getPanId())
                 .name(sellerRequestDto.getName())
                 .gender(sellerRequestDto.getGender())
-                .emailId(sellerRequestDto.getEmailId()).build();
+                .emailId(sellerRequestDto.getEmailId())
+                .password(sellerRequestDto.getPassword()).build();
 
     }
     public static SellerResponseDto EntityToResponseDto(Seller seller){
